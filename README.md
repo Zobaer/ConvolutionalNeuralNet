@@ -242,13 +242,13 @@ Fig. 2: Loss data plotted against number of epochs (learning rate = 0.001, batch
 
 - The number of parameters in CNN_lenet can be seen from below output:
 
-![alt text](https://github.com/Zobaer/ConvolutionalNeuralNet/blob/main/figs/Table5.png)
+![alt text](https://github.com/Zobaer/ConvolutionalNeuralNet/blob/main/figs/Table6.png)
 
 # Equivalent Feedforward Network
 
 The equivalent feedforward network has been implemented. The code is available in LeNet_equivalent_feedforward_network.ipynb file. With feedforward network, the number of parameters became extremely high as seen from below result:
 
-![alt text](https://github.com/Zobaer/ConvolutionalNeuralNet/blob/main/figs/Table6.png)
+![alt text](https://github.com/Zobaer/ConvolutionalNeuralNet/blob/main/figs/Table7.png)
 
 - Due to every possible cross-connections in a fully connected layers, we got very high number of parameters in the equivalent dense network. Thus, model became computationally less efficient, each epoch was taking around 47 minutes thus running 25 epochs was nearly impossible. 
 - The number of parameters in CNN_lenet was 697,046 which was well manageable even for running 25 epochs to get high accuracy. But the equivalent feedforward network had 122,854,454 parameters which is computationally inefficient to a great extent, convergence was really slower and it could overfit the model too. Hence, feedforward network is not preferred in such this classification task.
