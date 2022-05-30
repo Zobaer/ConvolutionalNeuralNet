@@ -103,7 +103,7 @@ This model performance is worst among the three CNN models. It’s accurate in o
 
 As a summary, to have an optimized performance, we will go ahead with regular CNN with RMSProp optimizer, batch size = 64, epochs = 3 (more can be better but computational time will increase significantly with little amount of improvement in accuracy) and learning rate 0.001.
 
-#LeNet CNN:
+# LeNet CNN
 
 A LeNet CNN has been coded and evaluated using cifar-10 dataset in keras. The code can be found in lenet_CNN.ipynb colab notebook file. 
 
@@ -252,6 +252,51 @@ The equivalent feedforward network has been implemented. The code is available i
 
 - Due to every possible cross-connections in a fully connected layers, we got very high number of parameters in the equivalent dense network. Thus, model became computationally less efficient, each epoch was taking around 47 minutes thus running 25 epochs was nearly impossible. 
 - The number of parameters in CNN_lenet was 697,046 which was well manageable even for running 25 epochs to get high accuracy. But the equivalent feedforward network had 122,854,454 parameters which is computationally inefficient to a great extent, convergence was really slower and it could overfit the model too. Hence, feedforward network is not preferred in such this classification task.
+
+# CNN from scratch
+
+We will do below assumptions based on standard practices:
+- The stride for the convolution is 1.
+- One bias will be considered while calculating the number of parameters. But bias is ignored while calculating the output activation map, because its value is not given.
+- In the maxpooling layer, we will do 2 by 2 maxpooling with stride 2.
+
+The corresponding colab notebook file is Basic_CNN_from_scratch.ipynb. Inthis code, the dimensions of the input and kernel and the number of parameters has been determined . The activation map has been determined too through convolution operation. Also, the 2 by 2 maxpooling has been performed manually on the activation map and the result has been found out.
+
+Output:
+
+Size of the input:  (6, 6)
+
+Size of the kernel:  (3, 3)
+
+Number of parameters (considering the bias):  10
+
+Width of the output activation map:  4.0
+
+Height of the output activation map:  4.0
+
+
+Output activation map:
+
+ [[ 16.   9.  -4. -18.]
+ 
+ [ 17.  -5. -10. -12.]
+ 
+ [ 11.  -9. -17.   2.]
+ 
+ [  9.  -1. -15.  16.]]
+ 
+ Output after maxpooling:
+ 
+ [[17. -4.]
+ 
+ [11. 16.]]
+
+ 
+ 
+
+
+
+
 
 
 
